@@ -8,22 +8,24 @@ const article = document.createElement("article");
 const section = document.createElement("section");
 const newDiv = document.createElement("div");
 const footer = document.createElement("footer");
+const inputName = document.createElement("input");
+const inputLink = document.createElement("input");
+const buttonLink = document.createElement("button");
+const LinkPage = document.createElement("div");
+const InputPage = document.createElement("div");
+
+
 
 newElement.appendChild(button);
-button.innerHTML = "change";
+button.innerHTML = "change ";
 
 newElement.appendChild(article);
-let pArticle = document.createElement("p");
-pArticle.innerHTML = " <h1> TEXTO PRINCIPAL </h1>";
-article.appendChild(pArticle);
+article.innerHTML = " <h1><p> TEXTO PRINCIPAL </p></h1>";
 
 
 
-let pSection = document.createElement("p");
-pSection.innerHTML = "<h3> TEXTO SECUNDARIO </h3>"
+section.innerHTML = "<div><h3> <p>TEXTO SECUNDARIO </p></h3></div>"
 newElement.appendChild(section);
-section.appendChild(newDiv);
-newDiv.appendChild(pSection);
 
 bodyElement.appendChild(newElement);
 
@@ -40,6 +42,40 @@ img.setAttribute("src", "logo.png");
 img.setAttribute("alt", "");
 img.setAttribute("srcset", "");
 footer.appendChild(img);
+
+
+newElement.appendChild(LinkPage);
+LinkPage.style.display = "flex";
+LinkPage.style.flexDirection = "column";
+LinkPage.style.margin = "20px";
+
+
+const handleSubmit = () => {
+    const a = document.createElement("a");
+    a.innerHTML = inputName.value;
+    a.setAttribute("href", inputLink.value);
+    a.setAttribute("target", "_blank");
+    LinkPage.appendChild(a);
+};
+
+
+
+buttonLink.addEventListener("click", handleSubmit);
+buttonLink.innerHTML = "Criar";
+
+
+LinkPage.appendChild(InputPage);
+InputPage.appendChild(inputName);
+InputPage.appendChild(inputLink);
+InputPage.appendChild(buttonLink);
+
+
+
+
+
+
+
+
 
 
 
