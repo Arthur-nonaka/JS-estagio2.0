@@ -51,11 +51,13 @@ LinkPage.style.margin = "20px";
 
 
 const handleSubmit = () => {
+    const li = document.createElement("li");
     const a = document.createElement("a");
     a.innerHTML = inputName.value;
     a.setAttribute("href", inputLink.value);
     a.setAttribute("target", "_blank");
-    LinkPage.appendChild(a);
+    ul.appendChild(li);
+    li.appendChild(a);
 };
 
 
@@ -69,6 +71,8 @@ InputPage.appendChild(inputName);
 InputPage.appendChild(inputLink);
 InputPage.appendChild(buttonLink);
 
+const ul = document.createElement("ul");
+LinkPage.appendChild(ul);
 
 
 
